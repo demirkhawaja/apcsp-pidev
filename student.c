@@ -19,8 +19,7 @@ void printBookByPtr(struct Student* book)
   printf("  Age:%d\n", book->age);
   printf("  id:%d\n", book->bookid);
 
-  // could do it this way, but -> is easier
-  //printf("  id:%d\n", (*book).bookid);
+ 
 }
 
 int main()
@@ -43,19 +42,19 @@ int main()
 	printf("Enter student ID:\n");
 	fgets(input, 256, stdin);
 	sscanf(input, "%d", &bookid);
-//	scanf("%d",&bookid);
 
 
-  // create two books
+
+  
   struct Student student1;
   struct Student student2;
 
-  // fill one book with info - note strcpy
+  
   strcpy(student1.firstname, firstname);
   strcpy(student1.lastname, lastname);
   student1.age = age;
   student1.bookid = bookid;
 
-  // pass by ref - generally preferred as we don't make a copy
+  
   printBookByPtr(&student1);
 }
